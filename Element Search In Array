@@ -1,0 +1,33 @@
+// Searching an element in an Array
+import java.util.Scanner;
+
+public class ArraySearch {
+    public static int searchElement(int[] arr, int n, int element){
+        for(int i=0;i<n;i++){
+            if(arr[i]==element){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter number of elements: ");
+        int size=s.nextInt();
+        int arr[]=new int[size];
+        System.out.println("Enter array elements: ");
+        for(int i=0;i<size;i++){
+            arr[i]=s.nextInt();
+        }
+        int n=arr.length;
+        System.out.println("Enter element to search: ");
+        int position=s.nextInt();
+        int elementToSearch= searchElement(arr, position, n);
+        if(elementToSearch==-1){
+            System.out.println("Element not found");
+        } else{
+            System.out.println("Element found at index: " + (elementToSearch+1));
+        }
+        s.close();
+    }
+}
